@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="桃花岛论坛 - 专注于武侠文化探讨、金庸小说人物赏析、原创武侠小说创作与交流的中文社区。提供最新武侠资讯、经典角色讨论及原创文学展示。">
+    <meta name="keywords" content="桃花岛论坛, 武侠小说, 金庸, 原创文学, 武侠社区, 神雕侠侣, 射雕英雄传">
+    <title>桃花岛论坛 - 武侠文学交流与金庸小说社区</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #8B4513;
+            --primary-hover: #A0522D;
+            --secondary-color: #D2691E;
+            --bg-color: #FDFBF7;
+            --card-bg: #FFFFFF;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-color: #E0E0E0;
+            --accent-green: #2E8B57;
+            --spacing-unit: 8px;
+            --container-width: 1200px;
+            --header-height: 64px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-top: var(--header-height);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--primary-color);
+            color: #fff;
+            height: var(--header-height);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: #FFD700;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-menu a {
+            color: rgba(255,255,255,0.9);
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: #FFD700;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: 6px 16px;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.6);
+            color: #fff;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: #fff;
+        }
+
+        .btn-primary {
+            background-color: var(--secondary-color);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background-color: #FF8C00;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%);
+            color: #fff;
+            padding: 48px 0;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            font-size: 16px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 24px;
+        }
+
+        .search-box {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 10px 16px;
+            border-radius: 4px 0 0 4px;
+            border: none;
+            outline: none;
+        }
+
+        .search-box button {
+            background-color: var(--accent-green);
+            color: #fff;
+            border: none;
+            padding: 0 24px;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* Main Grid */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-menu {
+                display: none; /* Simplified for mobile */
+            }
+            .header-actions {
+                display: none;
+            }
+        }
+
+        /* Section Titles */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            color: var(--primary-color);
+            border-left: 4px solid var(--primary-color);
+            padding-left: 10px;
+            font-weight: bold;
+        }
+
+        .more-link {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .more-link:hover {
+            color: var(--primary-color);
+        }
+
+        /* Forum Categories */
+        .forum-list {
+            background: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .forum-item {
+            display: flex;
+            align-items: center;
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--border-color);
+            transition: background 0.2s;
+        }
+
+        .forum-item:last-child {
+            border-bottom: none;
+        }
+
+        .forum-item:hover {
+            background-color: #FAFAFA;
+        }
+
+        .forum-icon {
+            width: 48px;
+            height: 48px;
+            background-color: #FFF8DC;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 16px;
+            font-size: 20px;
+            color: var(--primary-color);
+            flex-shrink: 0;
+        }
+
+        .forum-info {
+            flex: 1;
+        }
+
+        .forum-name {
+            font-size: 16px;
+            font-weight: bold;
+            color: var(--text-main);
+            margin-bottom: 4px;
+        }
+
+        .forum-desc {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .forum-stats {
+            text-align: right;
+            font-size: 12px;
+            color: #999;
+            min-width: 80px;
+        }
+
+        /* Hot Topics */
+        .topic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 16px;
+        }
+
+        .topic-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .topic-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-color: var(--primary-color);
+        }
+
+        .topic-tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 11px;
+            margin-bottom: 8px;
+            width: fit-content;
+        }
+
+        .tag-wuxia { background-color: #E6F4EA; color: var(--accent-green); }
+        .tag-character { background-color: #E8F0FE; color: #1a73e8; }
+        .tag-creation { background-color: #FFF4E5; color: #f57c00; }
+
+        .topic-title {
+            font-size: 15px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .topic-meta {
+            margin-top: auto;
+            font-size: 12px;
+            color: #999;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .rank-list li {
+            display: flex;
+            align-items: baseline;
+            padding: 8px 0;
+            border-bottom: 1px dashed #eee;
+            font-size: 14px;
+        }
+
+        .rank-list li:last-child {
+            border-bottom: none;
+        }
+
+        .rank-num {
+            width: 20px;
+            font-weight: bold;
+            color: var(--text-secondary);
+            margin-right: 8px;
+        }
+
+        .rank-num.top3 { color: #FF4500; }
+        .rank-num.top2 { color: #FF8C00; }
+        .rank-num.top1 { color: #FFD700; }
+
+        .rank-title {
+            flex: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .rank-views {
+            font-size: 12px;
+            color: #999;
+        }
+
+        /* Featured Content */
+        .featured-section {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 40px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 24px;
+        }
+
+        .featured-article {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .featured-img {
+            width: 240px;
+            height: 160px;
+            background-color: #ddd;
+            border-radius: 6px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .featured-content h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .featured-content p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .highlight-list {
+            border-left: 2px solid var(--primary-color);
+            padding-left: 16px;
+        }
+
+        .highlight-item {
+            margin-bottom: 16px;
+        }
+
+        .highlight-item h4 {
+            font-size: 15px;
+            margin-bottom: 4px;
+        }
+
+        .highlight-item p {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2C2C2C;
+            color: #999;
+            padding: 40px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 32px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #444;
+            padding-top: 20px;
+            font-size: 13px;
+        }
+
+        /* Utility */
+        .text-sm { font-size: 13px; }
+        .text-xs { font-size: 12px; }
+        .mt-2 { margin-top: 8px; }
+        .text-center { text-align: center; }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <a href="#" class="logo">
+            <span>🏝️</span> 桃花岛论坛
+        </a>
+        <nav class="nav-menu">
+            <a href="#" class="active">首页</a>
+            <a href="#">金庸专区</a>
+            <a href="#">原创武侠</a>
+            <a href="#">人物赏析</a>
+            <a href="#">历史考据</a>
+        </nav>
+        <div class="header-actions">
+            <button class="btn btn-outline">登录</button>
+            <button class="btn btn-primary">注册</button>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>桃花岛论坛 - 共话江湖恩怨，传承武侠精神</h1>
+            <p>汇聚海内外武侠迷，探讨金庸小说、古龙经典，分享原创武侠创作，重温那段快意恩仇的江湖岁月。</p>
+            <form class="search-box" onsubmit="event.preventDefault();">
+                <input type="text" placeholder="搜索话题、小说、人物...">
+                <button type="submit">搜索</button>
+            </form>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Main Content Area -->
+        <div class="main-grid">
+            <!-- Left Column: Categories & Topics -->
+            <div class="content-area">
+                
+                <!-- Forum Categories -->
+                <section class="mb-4">
+                    <div class="section-header">
+                        <h2 class="section-title">热门板块</h2>
+                        <a href="#" class="more-link">查看全部 &raquo;</a>
+                    </div>
+                    <div class="forum-list">
+                        <div class="forum-item">
+                            <div class="forum-icon">📜</div>
+                            <div class="forum-info">
+                                <h3 class="forum-name">金庸全集讨论</h3>
+                                <p class="forum-desc">《射雕英雄传》《神雕侠侣》《倚天屠龙记》等原著深度解析。</p>
+                            </div>
+                            <div class="forum-stats">
+                                <div>128.5万</div>
+                                <div class="text-xs">主题</div>
+                            </div>
+                        </div>
+                        <div class="forum-item">
+                            <div class="forum-icon">⚔️</div>
+                            <div class="forum-info">
+                                <h3 class="forum-name">原创武侠创作</h3>
+                                <p class="forum-desc">发布你的武侠小说、诗词歌赋、武功招式设定与心得。</p>
+                            </div>
+                            <div class="forum-stats">
+                                <div>45.2万</div>
+                                <div class="text-xs">主题</div>
+                            </div>
+                        </div>
+                        <div class="forum-item">
+                            <div class="forum-icon">🎭</div>
+                            <div class="forum-info">
+                                <h3 class="forum-name">影视改编版</h3>
+                                <p class="forum-desc">讨论83版《射雕》、2003版《倚天》及最新电视剧/电影评价。</p>
+                            </div>
+                            <div class="forum-stats">
+                                <div>89.1万</div>
+                                <div class="text-xs">主题</div>
+                            </div>
+                        </div>
+                        <div class="forum-item">
+                            <div class="forum-icon">📜</div>
+                            <div class="forum-info">
+                                <h3 class="forum-name">古龙与其它名家</h3>
+                                <p class="forum-desc">除金庸外，古龙、梁羽生、温瑞安等武侠作家的交流园地。</p>
+                            </div>
+                            <div class="forum-stats">
+                                <div>32.4万</div>
+                                <div class="text-xs">主题</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Latest Topics -->
+                <section class="mb-4">
+                    <div class="section-header">
+                        <h2 class="section-title">最新热议</h2>
+                        <a href="#" class="more-link">更多动态 &raquo;</a>
+                    </div>
+                    <div class="topic-grid">
+                        <article class="topic-card">
+                            <span class="topic-tag tag-wuxia">原创</span>
+                            <h3 class="topic-title"><a href="#">《碧海潮生》试读：黄药师与冯默风的最后对决</a></h3>
+                            <p class="text-sm text-secondary mt-2">作者：江南一叶 | 浏览：3,421</p>
+                        </article>
+                        <article class="topic-card">
+                            <span class="topic-tag tag-character">人物</span>
+                            <h3 class="topic-title"><a href="#">深度解析：郭靖与杨康性格差异的根源</a></h3>
+                            <p class="text-sm text-secondary mt-2">作者：武侠迷 | 浏览：5,892</p>
+                        </article>
+                        <article class="topic-card">
+                            <span class="topic-tag tag-wuxia">考据</span>
+                            <h3 class="topic-title"><a href="#">桃花岛地形考：从地图看东邪的布局智慧</a></h3>
+                            <p class="text-sm text-secondary mt-2">作者：地理学家 | 浏览：2,100</p>
+                        </article>
+                        <article class="topic-card">
+                            <span class="topic-tag tag-character">影视</span>
+                            <h3 class="topic-title"><a href="#">新《射雕》选角争议：谁才是真正的黄蓉？</a></h3>
+                            <p class="text-sm text-secondary mt-2">作者：影评人 | 浏览：12,056</p>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Featured Article -->
+                <section class="featured-section">
+                    <div class="section-header">
+                        <h2 class="section-title">今日精选</h2>
+                    </div>
+                    <div class="featured-grid">
+                        <div class="featured-article">
+                            <img src="https://picsum.photos/seed/wuxia1/240/160" alt="Featured" class="featured-img">
+                            <div class="featured-content">
+                                <h3><a href="#">【专题】从“东邪”黄药师看中国文人的风骨与狂傲</a></h3>
+                                <p class="mt-2">黄药师是金庸笔下极具魅力的角色之一，他才华横溢却性格孤僻，行事乖张却又重情重义。本文将从文学隐喻的角度，剖析这一角色背后的文化内涵...</p>
+                            </div>
+                        </div>
+                        <div class="highlight-list">
+                            <div class="highlight-item">
+                                <h4><a href="#">桃花岛论剑大赛开启</a></h4>
+                                <p>年度武侠征文活动火热进行中，赢取实体武侠套装。</p>
+                            </div>
+                            <div class="highlight-item">
+                                <h4><a href="#">新版本《倚天屠龙记》原著补完计划</a></h4>
+                                <p>集结同人作者，共同补全金庸未完成的章节设定。</p>
+                            </div>
+                            <div class="highlight-item">
+                                <h4><a href="#">武侠论坛版规更新通知</a></h4>
+                                <p>为了更好的交流环境，请各位侠士遵守社区规范。</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Right Column: Sidebar -->
+            <aside class="sidebar">
+                <!-- Hot Ranking -->
+                <div class="sidebar-widget">
+                    <h3 class="section-title" style="border:none; padding:0; margin-bottom:16px;">热帖排行</h3>
+                    <ul class="rank-list">
+                        <li>
+                            <span class="rank-num top1">1</span>
+                            <span class="rank-title"><a href="#">如果黄药师娶了李莫愁，故事会怎么发展？</a></span>
+                        </li>
+                        <li>
+                            <span class="rank-num top2">2</span>
+                            <span class="rank-title"><a href="#">盘点金庸小说中武功最高的五位反派</a></span>
+                            <span class="rank-views">8.9w</span>
+                        </li>
+                        <li>
+                            <span class="rank-num top3">3</span>
+                            <span class="rank-title"><a href="#">【原创】桃花岛十二峰诗词补全</a></span>
+                            <span class="rank-views">5.2w</span>
+                        </li>
+                        <li>
+                            <span class="rank-num">4</span>
+                            <span class="rank-title"><a href="#">杨过断臂后为何没有回古墓？</a></span>
+                            <span class="rank-views">3.1w</span>
+                        </li>
+                        <li>
+                            <span class="rank-num">5</span>
+                            <span class="rank-title"><a href="#">周伯通与瑛姑的恩怨情仇全解析</a></span>
+                            <span class="rank-views">2.8w</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="sidebar-widget">
+                    <h3 class="section-title" style="border:none; padding:0; margin-bottom:16px;">快速导航</h3>
+                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:8px;">
+                        <a href="#" class="btn btn-outline" style="text-align:center; padding:8px;">书库</a>
+                        <a href="#" class="btn btn-outline" style="text-align:center; padding:8px;">作者专区</a>
+                        <a href="#" class="btn btn-outline" style="text-align:center; padding:8px;">排行榜</a>
+                        <a href="#" class="btn btn-outline" style="text-align:center; padding:8px;">活动中心</a>
+                    </div>
+                </div>
+
+                <!-- Advertisement / Banner -->
+                <div class="sidebar-widget" style="background: #FFF8DC; text-align: center; padding: 20px 0;">
+                    <h4 style="color: var(--primary-color); margin-bottom: 8px;">加入VIP会员</h4>
+                    <p class="text-sm text-secondary" style="margin-bottom: 12px;">解锁专属徽章与发帖权限</p>
+                    <button class="btn btn-primary" style="width: 100%;">立即升级</button>
+                </div>
+            </aside>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>关于桃花岛</h4>
+                <p class="text-sm">桃花岛论坛成立于2010年，是国内最活跃的武侠文学社区之一。我们致力于弘扬传统武侠文化，为文学爱好者提供一个自由交流的平台。</p>
+            </div>
+            <div class="footer-col">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="#">社区公告</a></li>
+                    <li><a href="#">用户协议</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                    <li><a href="#">联系站长</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>热门板块</h4>
+                <ul>
+                    <li><a href="#">金庸全集讨论</a></li>
+                    <li><a href="#">原创武侠创作</a></li>
+                    <li><a href="#">影视改编版</a></li>
+                    <li><a href="#">历史考据</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关注我们</h4>
+                <p class="text-sm">新浪微博 | 微信公众号</p>
+                <p class="text-sm mt-2">QQ群：123456789</p>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 桃花岛论坛 版权所有 | 保留所有权利
+        </div>
+    </div>
+</footer>
+
+</body>
+                                  </html>
