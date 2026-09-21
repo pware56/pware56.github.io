@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="东哥辅助官网，提供专业的游戏工具与辅助系统，包含功能介绍、安全说明、版本更新日志及常见问题解答，致力于为玩家提供稳定高效的辅助服务。">
+    <meta name="keywords" content="东哥辅助,游戏辅助,工具软件,版本更新,游戏攻略">
+    <title>东哥辅助-专业游戏工具与辅助系统官方平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
+            --secondary-color: #1e293b;
+            --accent-color: #f59e0b;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-light: #64748b;
+            --border-color: #e2e8f0;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: var(--radius-md);
+            font-weight: 500;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: #eff6ff;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            border-color: var(--primary-hover);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .stat-item h3 {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        .stat-item p {
+            font-size: 0.875rem;
+            color: #94a3b8;
+            margin: 0;
+        }
+
+        /* Features Section */
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            margin-bottom: 12px;
+            color: var(--text-main);
+        }
+
+        .section-header p {
+            color: var(--text-light);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 24px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background-color: #eff6ff;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Download/Action Section */
+        .action-section {
+            background-color: white;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .download-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #f1f5f9;
+            padding: 40px;
+            border-radius: var(--radius-lg);
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .download-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .download-info h3 {
+            font-size: 1.75rem;
+            margin-bottom: 12px;
+        }
+
+        .download-info p {
+            color: var(--text-light);
+            margin-bottom: 24px;
+        }
+
+        .download-btns {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-large {
+            padding: 12px 24px;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Version Log */
+        .version-log {
+            background-color: white;
+        }
+
+        .log-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .log-item {
+            display: flex;
+            gap: 20px;
+            padding: 24px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .log-item:last-child {
+            border-bottom: none;
+        }
+
+        .log-date {
+            min-width: 120px;
+            font-weight: 600;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .log-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .log-content p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: #f8fafc;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: var(--radius-md);
+            margin-bottom: 16px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .faq-question:hover {
+            background-color: #f8fafc;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-light);
+            display: none;
+            border-top: 1px solid #f1f5f9;
+            padding-top: 16px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        .icon-plus {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            background-color: #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: var(--text-main);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .icon-plus {
+            background-color: var(--primary-color);
+            color: white;
+            transform: rotate(45deg);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: #cbd5e1;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #334155;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.875rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 16px 0;
+                gap: 16px;
+            }
+
+            nav ul {
+                gap: 16px;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .download-box {
+                padding: 24px;
+            }
+
+            .download-info h3 {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+                东哥辅助
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#features">核心功能</a></li>
+                    <li><a href="#download">下载中心</a></li>
+                    <li><a href="#logs">更新日志</a></li>
+                    <li><a href="#faq">帮助中心</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#download" class="btn btn-outline">用户登录</a>
+                <a href="#download" class="btn btn-primary">立即下载</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>专业游戏辅助工具，提升游戏体验</h1>
+                <p>东哥辅助致力于提供稳定、安全、高效的辅助解决方案。全新引擎优化，操作流畅无卡顿，助您轻松应对各种游戏挑战。</p>
+                <div class="download-btns" style="justify-content: center;">
+                    <a href="#download" class="btn btn-primary btn-large">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                        下载客户端
+                    </a>
+                    <a href="#features" class="btn btn-outline btn-large">查看功能</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>50W+</h3>
+                        <p>注册用户</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>99.9%</h3>
+                        <p>在线率</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>24h</h3>
+                        <p>实时更新</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>核心功能特性</h2>
+                    <p>专为游戏玩家设计，功能全面且易于使用</p>
+                </div>
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                        </div>
+                        <h3>智能匹配系统</h3>
+                        <p>内置强大的智能算法，自动识别游戏环境，一键启动，告别繁琐设置。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        </div>
+                        <h3>多重安全防护</h3>
+                        <p>采用加密技术与行为模拟，有效降低检测风险，保障账号安全。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                        </div>
+                        <h3>流畅操作体验</h3>
+                        <p>底层代码优化，减少系统资源占用，确保在低配置电脑上依然流畅运行。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        </div>
+                        <h3>实时数据监控</h3>
+                        <p>提供详细的操作日志与状态反馈，让您对软件运行情况一目了然。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download Section -->
+        <section id="download" class="section action-section">
+            <div class="container">
+                <div class="download-box">
+                    <div class="download-info">
+                        <h3>东哥辅助 V3.0 正式版</h3>
+                        <p>最新版本已发布，新增多任务并发处理功能，修复已知Bug，性能提升30%。支持Windows 10/11系统，立即下载体验。</p>
+                        <ul style="margin-bottom: 24px; color: var(--text-light); font-size: 0.9rem;">
+                            <li style="margin-bottom: 8px;">✓ 支持最新游戏版本</li>
+                            <li style="margin-bottom: 8px;">✓ 防封号技术升级</li>
+                            <li>✓ 全自动更新机制</li>
+                        </ul>
+                    </div>
+                    <div class="download-btns">
+                        <a href="#" class="btn btn-primary btn-large">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                            Windows 64位
+                        </a>
+                        <a href="#" class="btn btn-outline btn-large">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                            Mac 版
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Version Log -->
+        <section id="logs" class="section version-log">
+            <div class="container">
+                <div class="section-header">
+                    <h2>版本更新日志</h2>
+                    <p>了解我们最新的功能迭代与修复内容</p>
+                </div>
+                <div class="log-list">
+                    <div class="log-item">
+                        <div class="log-date">2023.10.15</div>
+                        <div class="log-content">
+                            <h4>V3.0.2 稳定版</h4>
+                            <p>1. 优化内存占用，解决部分机型启动闪退问题。<br>2. 更新游戏数据库，支持最新赛季环境。<br>3. 完善用户反馈机制。</p>
+                        </div>
+                    </div>
+                    <div class="log-item">
+                        <div class="log-date">2023.09.20</div>
+                        <div class="log-content">
+                            <h4>V3.0.1 测试版</h4>
+                            <p>1. 新增自定义按键映射功能。<br>2. 修复网络波动导致的掉线问题。<br>3. 界面UI全面升级。</p>
+                        </div>
+                    </div>
+                    <div class="log-item">
+                        <div class="log-date">2023.08.10</div>
+                        <div class="log-content">
+                            <h4>V3.0.0 首发版本</h4>
+                            <p>1. 全新引擎上线，大幅提升运行效率。<br>2. 引入智能防误触系统。<br>3. 首次支持多开模式。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section faq-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>常见问题解答</h2>
+                    <p>关于东哥辅助的使用疑问与解答</p>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-item active">
+                        <div class="faq-question">
+                            辅助软件是否安全？会有封号风险吗？
+                            <span class="icon-plus">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>东哥辅助采用纯本地运行模式，数据不上传服务器，最大限度降低风险。我们持续更新反检测技术，目前用户反馈封号率极低。建议在正规网络环境下使用，并避免长时间连续高强度使用。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            支持哪些操作系统？
+                            <span class="icon-plus">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>目前东哥辅助主要支持Windows 10及Windows 11 64位系统。Mac系统目前处于测试阶段，暂未开放正式下载。请在下载前确认您的系统版本。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            如何获取技术支持？
+                            <span class="icon-plus">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>您可以通过官网的“联系客服”入口提交工单，或关注我们的官方社区获取最新资讯。技术人员会在24小时内响应您的咨询。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>东哥辅助</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.8;">致力于为游戏玩家提供最稳定、最安全的辅助工具。我们坚持技术创新，服务用户至上。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#features">功能介绍</a></li>
+                        <li><a href="#download">下载客户端</a></li>
+                        <li><a href="#logs">更新日志</a></li>
+                        <li><a href="#faq">帮助中心</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>法律声明</h4>
+                    <ul>
+                        <li><a href="#">用户协议</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">免责声明</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 东哥辅助. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的 FAQ 手风琴效果
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // 关闭其他打开的项
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // 切换当前项
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
