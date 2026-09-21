@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="韩剧女主角大全，提供热门韩剧女主角深度解析、角色评价、经典剧照及演员资料。从经典韩剧到新剧，全方位了解韩剧女主角的魅力与影响力。">
+    <meta name="keywords" content="韩剧女主角, 韩剧女主角解析, 韩剧女主演, 韩剧经典角色, 韩剧女演员">
+    <title>韩剧女主角-热门韩剧女主角深度解析与角色档案</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #b91c1c;
+            --secondary-color: #1f2937;
+            --accent-color: #f59e0b;
+            --bg-color: #f9fafb;
+            --card-bg: #ffffff;
+            --text-main: #111827;
+            --text-sub: #6b7280;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--secondary-color);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .search-bar {
+            display: flex;
+            background: #f3f4f6;
+            border-radius: 20px;
+            padding: 0.25rem 1rem;
+            align-items: center;
+        }
+
+        .search-bar input {
+            border: none;
+            background: transparent;
+            outline: none;
+            padding: 0.25rem;
+            width: 150px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+            color: white;
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #d1d5db;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.1);
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.875rem;
+            border: 1px solid rgba(255,255,255,0.2);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .tag:hover {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+        }
+
+        .section-header {
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            color: var(--secondary-color);
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+        }
+
+        .view-all {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        /* Grid Layout */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Character Card */
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid #e5e7eb;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            background-color: #e5e7eb;
+        }
+
+        .card-body {
+            padding: 1.25rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-meta {
+            font-size: 0.75rem;
+            color: var(--text-sub);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-sub);
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            flex: 1;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            padding-top: 1rem;
+            border-top: 1px solid #f3f4f6;
+        }
+
+        .rating {
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .drama-name {
+            font-size: 0.85rem;
+            color: var(--text-sub);
+        }
+
+        /* Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .sidebar-widget {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            border: 1px solid #e5e7eb;
+        }
+
+        .widget-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #f3f4f6;
+        }
+
+        .list-item {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .list-item:last-child {
+            border-bottom: none;
+        }
+
+        .rank-num {
+            width: 24px;
+            height: 24px;
+            background: #e5e7eb;
+            color: var(--text-sub);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-right: 0.75rem;
+        }
+
+        .list-item:nth-child(1) .rank-num { background: var(--accent-color); color: white; }
+        .list-item:nth-child(2) .rank-num { background: #9ca3af; color: white; }
+        .list-item:nth-child(3) .rank-num { background: #b45309; color: white; }
+
+        .list-content h4 {
+            font-size: 0.95rem;
+            margin-bottom: 0.1rem;
+        }
+
+        .list-content p {
+            font-size: 0.8rem;
+            color: var(--text-sub);
+        }
+
+        /* Features Section */
+        .features {
+            background: white;
+            padding: 4rem 1rem;
+            margin-top: 2rem;
+        }
+
+        .features-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: #fef2f2;
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+        }
+
+        .feature-item h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .feature-item p {
+            font-size: 0.9rem;
+            color: var(--text-sub);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary-color);
+            color: #d1d5db;
+            padding: 4rem 1rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1.25rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-col ul li a {
+            color: #9ca3af;
+            transition: color 0.2s;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #374151;
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Simplified for mobile */
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .grid-layout {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                order: 2;
+            }
+            .main-content {
+                order: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                韩剧女主角
+            </a>
+            <nav class="nav-links">
+                <a href="#" class="active">首页</a>
+                <a href="#">经典回顾</a>
+                <a href="#">最新剧集</a>
+                <a href="#">角色解析</a>
+                <a href="#">演员图鉴</a>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="搜索角色或演员...">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>探索韩剧女主角的世界</h1>
+            <p>从治愈系爱情到职场励志，深度解析韩剧中最具影响力的女性角色与演员。</p>
+            <div class="hero-tags">
+                <span class="tag">浪漫爱情</span>
+                <span class="tag">职场精英</span>
+                <span class="tag">复仇逆袭</span>
+                <span class="tag">古装宫廷</span>
+                <span class="tag">家庭伦理</span>
+                <span class="tag">悬疑惊悚</span>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="grid-layout">
+                <!-- Main Content Area -->
+                <div class="main-content">
+                    <div class="section-header">
+                        <h2 class="section-title">热门韩剧女主角</h2>
+                        <a href="#" class="view-all">查看全部 &rarr;</a>
+                    </div>
+
+                    <!-- Card 1 -->
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/kdrama1/400/500" alt="金智媛" class="card-image">
+                        <div class="card-body">
+                            <div class="card-meta">浪漫爱情 / 2023</div>
+                            <h3 class="card-title">金智媛 (《眼泪女王》)</h3>
+                            <p class="card-desc">饰演财阀家唯一的女儿白贤宇，性格率真善良，与财阀继承人之间展开一段跨越阶级的感人爱情故事。</p>
+                            <div class="card-footer">
+                                <span class="rating">评分 8.9</span>
+                                <span class="drama-name">《眼泪女王》</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 2 -->
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/kdrama2/400/500" alt="孙艺珍" class="card-image">
+                        <div class="card-body">
+                            <div class="card-meta">治愈爱情 / 2022</div>
+                            <h3 class="card-title">孙艺珍 (《爱的迫降》)</h3>
+                            <p class="card-desc">饰演朝鲜财阀继承人，因滑翔伞事故迫降至朝鲜，在两个世界之间体验截然不同的人生与爱情。</p>
+                            <div class="card-footer">
+                                <span class="rating">评分 9.1</span>
+                                <span class="drama-name">《爱的迫降》</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 3 -->
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/kdrama3/400/500" alt="金惠秀" class="card-image">
+                        <div class="card-body">
+                            <div class="card-meta">悬疑 / 2021</div>
+                            <h3 class="card-title">金惠秀 (《黑暗荣耀》)</h3>
+                            <p class="card-desc">饰演遭受校园暴力的受害者，历经多年隐忍策划复仇，展现了极致的演技与坚韧的女性力量。</p>
+                            <div class="card-footer">
+                                <span class="rating">9.0</span>
+                                <span class="drama-name">《黑暗荣耀》</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 4 -->
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/kdrama4/400/500" alt="申敏儿" class="card-image">
+                        <div class="card-body">
+                            <div class="card-meta">奇幻 / 2023</div>
+                            <h3 class="card-title">申敏儿 (《死期将至》)</h3>
+                            <p class="card-desc">女主角在临死之际重生回到过去，为了改变悲惨的命运而展开的奇幻冒险与成长旅程。</p>
+                            <div class="card-footer">
+                                <span class="rating">8.5</span>
+                                <span class="drama-name">《死期将至》</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <!-- Top List Widget -->
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">年度人气角色榜</h3>
+                        <div class="list-group">
+                            <div class="list-item">
+                                <span class="rank-num">1</span>
+                                <div class="list-content">
+                                    <h4>文东恩</h4>
+                                    <p>《黑暗荣耀》</p>
+                                </div>
+                            </div>
+                            <div class="list-item">
+                                <span class="rank-num">2</span>
+                                <div class="list-content">
+                                    <h4>罗曼</h4>
+                                    <p>《背着善宰跑》</p>
+                                </div>
+                            </div>
+                            <div class="list-item">
+                                <span class="rank-num">3</span>
+                                <div class="list-content">
+                                    <h4>文彩元</h4>
+                                    <p>《泪之女王》</p>
+                                </div>
+                            </div>
+                            <div class="list-item">
+                                <span class="rank-num">4</span>
+                                <div class="list-content">
+                                    <h4>崔爱玲</h4>
+                                    <p>《背着善宰跑》</p>
+                                </div>
+                            </div>
+                            <div class="list-item">
+                                <span class="rank-num">5</span>
+                                <div class="list-content">
+                                    <h4>申世理</h4>
+                                    <p>《背着善宰跑》</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Categories Widget -->
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">角色类型</h3>
+                        <ul>
+                            <li style="margin-bottom:0.5rem"><a href="#">👑 财阀千金</a></li>
+                            <li style="margin-bottom:0.5rem"><a href="#">👩‍⚕️ 医生/护士</a></li>
+                            <li style="margin-bottom:0.5rem"><a href="#">👩‍💼 职场精英</a></li>
+                            <li style="margin-bottom:0.5rem"><a href="#">🕵️‍♀️ 刑警/侦探</a></li>
+                            <li style="margin-bottom:0.5rem"><a href="#">👑 古代公主</a></li>
+                            <li style="margin-bottom:0.5rem"><a href="#">🧚‍♀️ 女巫/超自然</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Ad Placeholder -->
+                    <div class="sidebar-widget" style="background: #e5e7eb; min-height: 250px; display: flex; align-items: center; justify-content: center; color: #6b7280; font-size: 0.9rem;">
+                        广告位
+                    </div>
+                </aside>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">🎬</div>
+                    <h3>深度角色解析</h3>
+                    <p>不仅关注剧情，更深入挖掘女主角的心理变化、成长弧光及社会意义。</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">⭐</div>
+                    <h3>专业评分系统</h3>
+                    <p>基于剧情逻辑、演技表现及观众口碑的多维度综合评价体系。</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🎭</div>
+                    <h3>演员作品全记录</h3>
+                    <p>追踪韩剧女主角的演艺生涯，从出道作到巅峰代表作的完整梳理。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于韩剧女主角</h4>
+                <p style="color: #9ca3af; font-size: 0.9rem; line-height: 1.6;">
+                    本站致力于为广大韩剧爱好者提供最全面、最及时的女主角角色资料与深度解析。我们相信每一个女主角都有其独特的魅力与故事。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>快速导航</h4>
+                <ul>
+                    <li><a href="#">最新剧集</a></li>
+                    <li><a href="#">经典回顾</a></li>
+                    <li><a href="#">年度榜单</a></li>
+                    <li><a href="#">演员图鉴</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>热门标签</h4>
+                <ul>
+                    <li><a href="#">孙艺珍</a></li>
+                    <li><a href="#">金智媛</a></li>
+                    <li><a href="#">金泰梨</a></li>
+                    <li><a href="#">IU</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>联系我们</h4>
+                <ul>
+                    <li><a href="#">投稿合作</a></li>
+                    <li><a href="#">意见反馈</a></li>
+                    <li><a href="#">版权声明</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 韩剧女主角解析网. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+  </html>
