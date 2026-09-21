@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="露塞提娅:道具屋经营妙方 - 专注于《露塞提娅的道具屋》游戏攻略、经营技巧、稀有道具获取及店铺升级指南，助你打造最受欢迎的道具店。">
+    <meta name="keywords" content="露塞提娅,道具屋经营妙方,露塞提娅攻略,道具屋经营,游戏攻略">
+    <title>露塞提娅:道具屋经营妙方 - 游戏经营攻略与道具图鉴</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #5d4037;
+            --secondary-color: #8d6e63;
+            --accent-color: #ffb74d;
+            --bg-color: #fdfbf7;
+            --text-color: #3e2723;
+            --card-bg: #ffffff;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(93, 64, 55, 0.8), rgba(93, 64, 55, 0.8)), url('https://picsum.photos/seed/shop_bg/1600/600') center/cover;
+            color: #fff;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            border-radius: 30px;
+            font-weight: bold;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #ffca28;
+            transform: translateY(-2px);
+        }
+
+        /* Main Layout */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+            margin-bottom: 60px;
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 15px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        /* Strategy Cards */
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: transform 0.2s;
+            border: 1px solid #eee;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            background-color: #eee;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .card-text {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #efebe9;
+            color: var(--primary-color);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        /* Guide List */
+        .guide-list li {
+            background: var(--card-bg);
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--secondary-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .guide-list a {
+            font-weight: 500;
+        }
+
+        .guide-list span {
+            font-size: 0.85rem;
+            color: #888;
+        }
+
+        /* Interactive Tool */
+        .tool-box {
+            background: #fff;
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            border-top: 4px solid var(--accent-color);
+        }
+
+        .tool-box h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .price-input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .result-box {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 15px;
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            margin: 0 10px;
+            color: #d7ccc8;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            nav ul {
+                font-size: 0.9rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                🏪 露塞提娅<span>道具屋</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#strategy">经营策略</a></li>
+                    <li><a href="#items">道具图鉴</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="container">
+            <h1>露塞提娅:道具屋经营妙方</h1>
+            <p>在这里，我们将分享如何通过精心挑选商品、优化店铺布局和制定合理的定价策略，帮助露塞提娅的道具店成为全大陆最忙碌的店铺。</p>
+            <a href="#strategy" class="btn">开始经营指南</a>
+        </div>
+    </div>
+
+    <div class="container main-grid">
+        <!-- Left Column: Content -->
+        <main>
+            <!-- Strategy Section -->
+            <section id="strategy">
+                <h2 class="section-title">核心经营策略</h2>
+                <div class="strategy-grid">
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/strategy1/400/250" alt="定价策略" class="card-img">
+                        <div class="card-body">
+                            <h3 class="card-title">动态定价法则</h3>
+                            <p class="card-text">了解不同顾客群体的消费能力。在深夜时段降低价格以清库存，在节日前提高稀有道具的溢价。</p>
+                            <span class="tag">定价技巧</span>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/strategy2/400/250" alt="顾客服务" class="card-img">
+                        <div class="card-body">
+                            <h3 class="card-title">提升顾客满意度</h3>
+                            <p class="card-text">保持店铺整洁，及时回应顾客咨询。满意的顾客会增加店铺的好评率，从而吸引更多回头客。</p>
+                            <span class="tag">服务管理</span>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/strategy3/400/250" alt="库存管理" class="card-img">
+                        <div class="card-body">
+                            <h3 class="card-title">库存周转率优化</h3>
+                            <p class="card-text">不要囤积过多滞销品。优先采购高需求度的基础工具，再逐步尝试稀有装饰品。</p>
+                            <span class="tag">进货管理</span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Guide List Section -->
+            <section id="items">
+                <h2 class="section-title">新手入门指南</h2>
+                <ul class="guide-list">
+                    <li>
+                        <a href="#">如何快速积累初始资金？</a>
+                        <span>阅读 5 分钟</span>
+                    </li>
+                    <li>
+                        <a href="#">新手期必买的5种基础道具</a>
+                        <span>阅读 3 分钟</span>
+                    </li>
+                    <li>
+                        <a href="#">露塞提娅的店铺装修技巧</a>
+                        <span>阅读 8 分钟</span>
+                    </li>
+                    <li>
+                        <a href="#">如何识别高价值订单？</a>
+                        <span>阅读 4 分钟</span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Detailed Content -->
+            <section id="detailed">
+                <h2 class="section-title">道具屋经营妙方详解</h2>
+                <article>
+                    <h3>理解市场需求</h3>
+                    <p>在经营道具屋的过程中，最关键的一步是敏锐地捕捉市场需求。玩家需要观察不同NPC的购买偏好。例如，冒险者公会附近的道具屋，其剑刃、药水和地图的销量通常远高于普通住宅区。建议玩家在游戏初期多进行“市场调查”，通过查看商品库存列表，判断哪些是滞销品，哪些是紧俏货。</p>
+                    <br>
+                    <h3>合理利用折扣</h3>
+                    <p>道具屋经营妙方中，折扣机制是清理库存和快速回笼资金的利器。当店铺内同类道具库存超过一定数量时，系统会提示进行打折处理。虽然单件利润下降，但通过高频次的周转，可以腾出宝贵的货架空间来陈列更高级的商品。此外，在特殊节日（如丰收节、庆典）前，适当提高稀有道具的价格，往往能获得意想不到的收益。</p>
+                    <br>
+                    <h3>升级与扩建</h3>
+                    <p>随着游戏进程的推进，单一的店铺空间已无法满足需求。玩家应优先投资于店铺的扩建和装修。增加货架不仅能增加库存上限，还能提升店铺的整体美观度，从而提高顾客的好感度。记住，一个整洁、明亮且功能分区明确的店铺，是吸引更多顾客驻足的核心要素。</p>
+                </article>
+            </section>
+        </main>
+
+        <!-- Right Column: Sidebar -->
+        <aside>
+            <!-- Profit Calculator -->
+            <div class="tool-box">
+                <h3>💰 利润计算器</h3>
+                <p style="font-size: 0.9rem; color: #666; margin-bottom: 10px;">快速估算进货与售价的利润空间。</p>
+                <label for="cost" style="display:block; margin-bottom:5px; font-weight:bold;">进货成本</label>
+                <input type="number" id="cost" class="price-input" placeholder="例如：50" value="50">
+                
+                <label for="price" style="display:block; margin-bottom:5px; font-weight:bold;">售价</label>
+                <input type="number" id="price" class="price-input" placeholder="例如：100" value="100">
+                
+                <button class="btn" onclick="calculateProfit()" style="width:100%; font-size:0.9rem; padding: 10px;">计算利润</button>
+                
+                <div class="result-box" id="result">
+                    请输入数值...
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="tool-box" style="margin-top: 30px;">
+                <h3>❓ 常见问题 (FAQ)</h3>
+                <details style="margin-bottom: 10px; cursor: pointer;">
+                    <summary style="font-weight: bold; color: var(--primary-color);">如何获得稀有道具？</summary>
+                    <p style="font-size: 0.9rem; color: #666; margin-top: 5px;">稀有道具通常通过完成高难度订单、挖掘遗迹或与特定NPC交易获得。</p>
+                </details>
+                <details style="margin-bottom: 10px; cursor: pointer;">
+                    <summary style="font-weight: bold; color: var(--primary-color);">道具屋等级有什么用？</summary>
+                    <p style="font-size: 0.9rem; color: #666; margin-top: 5px;">等级提升会解锁新的货架类型和装饰物，并提高店铺的顾客容量上限。</p>
+                </details>
+                <details style="cursor: pointer;">
+                    <summary style="font-weight: bold; color: var(--primary-color);">每天什么时候生意最好？</summary>
+                    <p style="font-size: 0.9rem; color: #666; margin-top: 5px;">通常是游戏内的下午14:00到18:00，以及深夜的22:00到24:00，此时活跃顾客较多。</p>
+                </details>
+            </div>
+
+            <!-- Ad Placeholder -->
+            <div style="margin-top: 30px; background: #eee; height: 250px; display: flex; align-items: center; justify-content: center; color: #999; border-radius: 8px;">
+                广告位
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">关于我们</a>
+                <a href="#">游戏资讯</a>
+                <a href="#">联系合作</a>
+                <a href="#">隐私政策</a>
+            </div>
+            <p>&copy; 2023 露塞提娅道具屋攻略站. All rights reserved.</p>
+            <p style="font-size: 0.8rem; color: #a1887f; margin-top: 10px;">本网站为玩家攻略分享平台，非官方网站。</p>
+        </div>
+    </footer>
+
+    <script>
+        function calculateProfit() {
+            const cost = parseFloat(document.getElementById('cost').value);
+            const price = parseFloat(document.getElementById('price').value);
+            const resultBox = document.getElementById('result');
+
+            if (isNaN(cost) || isNaN(price)) {
+                resultBox.innerHTML = "<span style='color:red'>请输入有效的数字！</span>";
+                return;
+            }
+
+            if (price < cost) {
+                resultBox.innerHTML = "<span style='color:red'>售价不能低于成本价！</span>";
+                return;
+            }
+
+            const profit = price - cost;
+            const profitRate = ((profit / cost) * 100).toFixed(1);
+
+            resultBox.innerHTML = `
+                <strong>单件利润:</strong> ${profit}<br>
+                <strong>利润率:</strong> ${profitRate}%
+            `;
+        }
+    </script>
+</body>
+</html>
