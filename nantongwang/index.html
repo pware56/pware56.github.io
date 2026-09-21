@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="男同网提供高质量的男同小说、漫画、影视资讯及社区交流服务。涵盖耽美、纯爱、BL等热门题材，是同志群体及文学爱好者的一站式阅读平台。">
+    <meta name="keywords" content="男同网,耽美小说,男同漫画,同志文学,纯爱小说,男同影视">
+    <title>男同网-耽美小说与同志文学阅读平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #6c5ce7;
+            --secondary-color: #a29bfe;
+            --accent-color: #fd79a8;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #2d3436;
+            --text-light: #636e72;
+            --border-radius: 12px;
+            --container-width: 1200px;
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 1rem;
+        }
+
+        .section-title a {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: normal;
+        }
+
+        .section-title a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .top-bar {
+            background-color: #2d3436;
+            color: #dfe6e9;
+            font-size: 0.8rem;
+            padding: 0.5rem 0;
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .main-nav {
+            padding: 1rem 0;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .search-box {
+            display: flex;
+            background: #f1f2f6;
+            border-radius: 20px;
+            padding: 0.3rem 0.8rem;
+        }
+
+        .search-box input {
+            border: none;
+            background: transparent;
+            outline: none;
+            padding: 0.3rem;
+            width: 150px;
+        }
+
+        .search-box button {
+            border: none;
+            background: transparent;
+            color: var(--text-light);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-btn {
+            background-color: white;
+            color: var(--primary-color);
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            font-weight: bold;
+            display: inline-block;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Categories Grid */
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .category-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary-color);
+        }
+
+        .category-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .category-name {
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        /* Content Layout */
+        .content-layout {
+            display: grid;
+            grid-template-columns: 2.5fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        /* Book List */
+        .book-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .book-item {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            display: flex;
+            gap: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: box-shadow 0.2s;
+        }
+
+        .book-item:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .book-cover {
+            width: 120px;
+            height: 160px;
+            border-radius: 8px;
+            object-fit: cover;
+            background-color: #dfe6e9;
+            flex-shrink: 0;
+        }
+
+        .book-info {
+            flex: 1;
+        }
+
+        .book-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .book-title:hover {
+            color: var(--primary-color);
+        }
+
+        .book-meta {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background-color: #f1f2f6;
+            padding: 0.1rem 0.5rem;
+            border-radius: 4px;
+        }
+
+        .tag.hot { background-color: #ffeaa7; color: #d35400; }
+        .tag.new { background-color: #81ecec; color: #00b894; }
+
+        .book-desc {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        .book-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.4rem 1rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #5649c0;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: #f0f0ff;
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .widget-title {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #f1f2f6;
+        }
+
+        .rank-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        .rank-num {
+            width: 20px;
+            height: 20px;
+            background-color: #dfe6e9;
+            color: var(--text-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+        }
+
+        .rank-list li:nth-child(1) .rank-num { background-color: var(--accent-color); color: white; }
+        .rank-list li:nth-child(2) .rank-num { background-color: #fdcb6e; color: white; }
+        .rank-list li:nth-child(3) .rank-num { background-color: #e17055; color: white; }
+
+        .rank-title {
+            flex: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Features Section */
+        .features {
+            background-color: white;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .feature-item h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .feature-item p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2d3436;
+            color: #b2bec3;
+            padding: 3rem 0;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #636e72;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .content-layout {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                display: none; /* Simplified for mobile */
+            }
+            
+            .book-item {
+                flex-direction: column;
+            }
+            
+            .book-cover {
+                width: 100%;
+                height: 200px;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="container">
+            <span>欢迎访问男同网，发现更多精彩故事</span>
+            <div class="top-links">
+                <a href="#">登录</a> | <a href="#">注册</a>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="#" class="logo">男同网<span>.CN</span></a>
+                <nav class="nav-links">
+                    <a href="#">首页</a>
+                    <a href="#">耽美小说</a>
+                    <a href="#">纯爱漫画</a>
+                    <a href="#">影视资讯</a>
+                    <a href="#">社区论坛</a>
+                </nav>
+                <div class="search-box">
+                    <input type="text" placeholder="搜索书名/作者...">
+                    <button type="button">🔍</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>探索真挚情感与精彩故事</h1>
+                <p>汇聚全网优质耽美、纯爱及同志题材小说与漫画，为您带来沉浸式的阅读体验。</p>
+                <a href="#" class="hero-btn">开始阅读</a>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Categories -->
+            <section class="categories">
+                <div class="category-card">
+                    <span class="category-icon">📖</span>
+                    <div class="category-name">现代校园</div>
+                </div>
+                <div class="category-card">
+                    <span class="category-icon">🏰</span>
+                    <div class="category-name">古代宫廷</div>
+                </div>
+                <div class="category-card">
+                    <span class="category-icon">👽</span>
+                    <div class="category-name">科幻未来</div>
+                </div>
+                <div class="category-card">
+                    <span class="category-icon">👻</span>
+                    <div class="category-name">灵异悬疑</div>
+                </div>
+                <div class="category-card">
+                    <span class="category-icon">🎭</span>
+                    <div class="category-name">职场商战</div>
+                </div>
+                <div class="category-card">
+                    <span class="category-icon">⚽</span>
+                    <div class="category-name">运动竞技</div>
+                </div>
+            </section>
+
+            <!-- Main Content Layout -->
+            <div class="content-layout">
+                <!-- Book List -->
+                <section class="book-list-section">
+                    <div class="section-title">
+                        <h2>热门推荐</h2>
+                        <a href="#">查看更多 &gt;</a>
+                    </div>
+                    
+                    <div class="book-list">
+                        <!-- Book Item 1 -->
+                        <article class="book-item">
+                            <img src="https://picsum.photos/seed/love1/240/320" alt="书封面" class="book-cover">
+                            <div class="book-info">
+                                <h3 class="book-title"><a href="#">独家占有：顾少的掌心宠</a></h3>
+                                <div class="book-meta">
+                                    <span class="tag hot">热门</span>
+                                    <span>作者：苏小暖</span>
+                                    <span>状态：连载中</span>
+                                    <span>分类：现代豪门</span>
+                                </div>
+                                <p class="book-desc">一场精心策划的邂逅，让高冷禁欲的顾总步步沦陷。当真香定律遇上腹黑深情，看他是如何宠妻上天的...</p>
+                                <div class="book-actions">
+                                    <button class="btn btn-primary">立即阅读</button>
+                                    <button class="btn btn-outline">加入书架</button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Book Item 2 -->
+                        <article class="book-item">
+                            <img src="https://picsum.photos/seed/love2/240/320" alt="书封面" class="book-cover">
+                            <div class="book-info">
+                                <h3 class="book-title"><a href="#">时光与你皆甜</a></h3>
+                                <div class="book-meta">
+                                    <span class="tag new">新更</span>
+                                    <span>作者：林语堂</span>
+                                    <span>状态：已完结</span>
+                                    <span>分类：校园青春</span>
+                                </div>
+                                <p class="book-desc">从高中时代的青涩暗恋到多年后的久别重逢，那些关于青春的记忆，终究在时光的缝隙里酿成了甜酒。</p>
+                                <div class="book-actions">
+                                    <button class="btn btn-primary">立即阅读</button>
+                                    <button class="btn btn-outline">加入书架</button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Book Item 3 -->
+                        <article class="book-item">
+                            <img src="https://picsum.photos/seed/love3/240/320" alt="书封面" class="book-cover">
+                            <div class="book-info">
+                                <h3 class="book-title"><a href="#">陛下请自重</a></h3>
+                                <div class="book-meta">
+                                    <span class="tag hot">热门</span>
+                                    <span>作者：墨染青衣</span>
+                                    <span>状态：连载中</span>
+                                    <span>分类：古代宫廷</span>
+                                </div>
+                                <p class="book-desc">他是冷面无情的摄政王，她是身世成谜的异姓王姬。朝堂风云变幻，两人如何在权谋中守护这份禁忌之恋。</p>
+                                <div class="book-actions">
+                                    <button class="btn btn-primary">立即阅读</button>
+                                    <button class="btn btn-outline">加入书架</button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">排行榜</h3>
+                        <ul class="rank-list">
+                            <li>
+                                <span class="rank-num">1</span>
+                                <span class="rank-title"><a href="#">独家占有：顾少的掌心宠</a></span>
+                            </li>
+                            <li>
+                                <span class="rank-num">2</span>
+                                <span class="rank-title"><a href="#">重生之将门毒后</a></span>
+                            </li>
+                            <li>
+                                <span class="rank-num">3</span>
+                                <span class="rank-title"><a href="#">撒野</a></span>
+                            </li>
+                            <li>
+                                <span class="rank-num">4</span>
+                                <span class="rank-title"><a href="#">某某</a></span>
+                            </li>
+                            <li>
+                                <span class="rank-num">5</span>
+                                <span class="rank-title"><a href="#">伪装学渣</a></span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">热门标签</h3>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                            <a href="#" class="tag">双男主</a>
+                            <a href="#" class="tag">破镜重圆</a>
+                            <a href="#" class="tag">甜宠</a>
+                            <a href="#" class="tag">强制爱</a>
+                            <a href="#" class="tag">高干</a>
+                            <a href="#" class="tag">娱乐圈</a>
+                            <a href="#" class="tag">军旅</a>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">关于我们</h3>
+                        <p style="font-size: 0.9rem; color: #636e72; margin-bottom: 1rem;">
+                            男同网致力于为同志群体及文学爱好者提供纯净、健康的阅读环境。我们收录了大量优质的耽美、纯爱及同志题材作品，拒绝低俗内容。
+                        </p>
+                        <a href="#" style="color: var(--primary-color); font-size: 0.9rem; font-weight: bold;">阅读更多介绍 &rarr;</a>
+                    </div>
+                </aside>
+            </div>
+
+            <!-- Features Section -->
+            <section class="features">
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <span class="feature-icon">⚡</span>
+                        <h3>极速更新</h3>
+                        <p>第一时间更新最新章节，追书不再等待。</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🛡️</span>
+                        <h3>纯净无广</h3>
+                        <p>去除恶意弹窗与诱导广告，专注阅读体验。</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">📱</span>
+                        <h3>多端同步</h3>
+                        <p>支持手机、平板、电脑阅读，随时随地畅读。</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">💬</span>
+                        <h3>互动社区</h3>
+                        <p>书友交流讨论，分享阅读心得与感悟。</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>男同网</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.8;">
+                        专注于耽美、纯爱及同志文学的阅读平台。<br>
+                        让每一个真挚的故事都能被看见。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">首页推荐</a></li>
+                        <li><a href="#">最新章节</a></li>
+                        <li><a href="#">排行榜单</a></li>
+                        <li><a href="#">全本专区</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>分类浏览</h4>
+                    <ul>
+                        <li><a href="#">现代都市</a></li>
+                        <li><a href="#">古代架空</a></li>
+                        <li><a href="#">科幻未来</a></li>
+                        <li><a href="#">灵异悬疑</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li><a href="#">用户反馈</a></li>
+                        <li><a href="#">投稿指南</a></li>
+                        <li><a href="#">版权声明</a></li>
+                        <li><a href="#">加入我们</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 男同网. All Rights Reserved. 本站内容仅供个人学习交流使用，请勿用于商业用途。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+              </html>
